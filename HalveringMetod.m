@@ -5,17 +5,17 @@ function f = HalveringMetod(e)
     ap = a;
     bp = b;
     
-    for i=0:5
-        if(ap - bp < e)
+    for i=0:50
+        if(abs(ap - bp) < e)
             break;
         end
         m = ((ap + bp)/2);
-        if(sign(skar(ap)skar(m)) < 0)
+        if(sign(skar(ap)*skar(m)) < 0)
             bp = m;
         end
-        if(sign(fxy(bp)fxy(m)) < 0)
+        if(sign(skar(bp)*skar(m)) < 0)
             ap = m;
         end
     end
-    f = (ap:bp);
+    f = [ap,bp];
 end
