@@ -5,7 +5,7 @@ function f = HalveringMetod(e)
     ap = a;
     bp = b;
     
-    for i=0:50
+    for i=0:5
         if(abs(ap - bp) < e)
             break;
         end
