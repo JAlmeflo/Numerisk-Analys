@@ -30,3 +30,5 @@ hold on; % Also write the mesh to the same graph
 [rx, ry] = meshgrid(-15:0.1:15, -15:0.1:15);
 rz = (a4*rx.^2 + a5*ry.^2 + rx.*ry + 10*a6) / (10*a7);
 surf(rx, ry, rz);
+
+skar = @(t) (2*t*sin(2*t - 1.5))*((2*t*sin(2*t - 1.5)) + (4*t*cos(t)+1.5)) + 105*t.^2 - 920;
