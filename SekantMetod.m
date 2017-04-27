@@ -9,7 +9,7 @@ function f = SekantMetod(xn, xn_1)
     xn1 = xn - skar(xn)*((xn - xn_1)/(skar(xn) - skar(xn_1)));
     
     xn_1 = xn;
-    xn = xn1;    
+    xn = xn1;
   end
   f = xn;
 end
