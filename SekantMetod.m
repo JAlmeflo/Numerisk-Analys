@@ -10,6 +10,6 @@ function f = SekantMetod(xn, xn_1)
     
     xn_1 = xn;
     xn = xn1;    
-  endwhile
+  end
   f = xn;
 end
