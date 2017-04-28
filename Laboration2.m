@@ -38,3 +38,4 @@ skar = @(t) (2*t*sin(2*t - 1.5)).^2 + (4*t*cos(t)+1.5)*(2*t*sin(2*t - 1.5)) + 10
 
 f = HalveringMetod(0.001);
 disp(f);
+
