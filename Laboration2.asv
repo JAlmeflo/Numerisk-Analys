@@ -34,9 +34,9 @@ surf(rx, ry, rz);
 hold off;
 
 %skar = @(t) (2*t*sin(2*t - 1.5))*((2*t*sin(2*t - 1.5)) + (4*t*cos(t)+1.5)) + 105*t.^2 - 920;
-skar = @(t) (2*t*sin(2*t - 1.5)).^2 + (4*t*cos(t)+1.5)*(2*t*sin(2*t - 1.5)) + 105*t.^2 - 920;
+skar = @(t) (2*t*sin(2*t - 1.5)).^2 + (4*t*cos(t)+1.5)*(2*t*sin(2*t - 1.5)) + 105*t.^2 - 920; t.^2;
 
 f = HalveringMetod(0.001);
 disp(f);
 
-Q = baglangd(2);
+Q = bagland(1)

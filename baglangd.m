@@ -1,10 +1,7 @@
-function f = baglangd(t)
-    startf  = v(-2.8383);
-    endf    = v(t);
+function f = baglangd(i)
     sum = 0;
-    for i = 1:99
-       sum = sum + SimpsonsRule(i, i+1); 
+    for k = 1:(i-1)
+       sum = sum + SimpsonsRule(k, k+1);
     end
-    
     f = sum;
 end
