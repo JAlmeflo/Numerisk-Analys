@@ -40,3 +40,10 @@ f = HalveringMetod(0.001);
 disp(f);
 
 Q = baglangd(2);
+
+st = zeros(1,100);
+for i =1:100
+  st(i) = baglangd(i);
+end
+
+plot(r, st);
