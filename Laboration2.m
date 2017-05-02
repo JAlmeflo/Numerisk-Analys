@@ -21,7 +21,7 @@ vt = @(t) [4*t*cos(t) + a1, 2*t*sin(2*t - a2), a3 - t.^2];
 fxy = @(x, y) (a4*x.^2 + a5*y.^2 + x*y - 10*a6) / (10*a7);
 
 %r = -2*pi:0.01:2*pi; % Old range value
-r = -2.8383:0.056827:2.8444; % New range value (med 100 punkter)
+r = linspace(-2.8383, 2.8444, 100); % New range value (med 100 punkter)
 plot3(4.*r.*cos(r) + a1, 2.*r.*sin(2.*r - a2), a3 - r.^2, '*');
 hold on; % Also write the mesh to the same graph
 
