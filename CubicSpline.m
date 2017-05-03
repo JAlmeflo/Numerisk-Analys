@@ -45,25 +45,23 @@ function f = CubicSpline(x, y)
   
   % k
   % Todo: Calculate k from Ak = r;
+  k = A\r;
   
   % Calculate spline S
   S = zeros(1,sz);
   for i = 2:sz % Start from 2 because we need x(i-1)
-    hi = x(i) - x(i - 1); % Todo: change (already calculated)
-    
-    
     % kn_1 + 2kn = rn
     % rn = 3*((yn - yn_1) / hn);
     ki = 0; % Todo: what is this even?
     ki_1 = 0; % Todo: and this is what?
     
     ai = y(i - 1);
-    bi = hi * ki_1;
-    ci = 3*(y(i) - y(i - 1)) - hi*(2*ki_1 + ki);
-    di = 2*(y(i - 1) - yi) + hi*(ki_1 + ki);
+    bi = h(i) * ki_1;
+    ci = 3*(y(i) - y(i - 1)) - h(i)*(2*ki_1 + ki);
+    di = 2*(y(i - 1) - yi) + h(i)*(ki_1 + ki);
     
     % ui = (x - x(i - 1)) / hi;    
-    S(i) = @(x) ai + bi*((x - x(i - 1)) / hi) + ci*((x - x(i - 1)) / hi).^2 + di*((x - x(i - 1)) / hi).^3;    
+    S(i) = @(x) ai + bi*((x - x(i - 1)) / h(i)) + ci*((x - x(i - 1)) / h(i)).^2 + di*((x - x(i - 1)) / h(i)).^3;
   end
   f = S;
 end
