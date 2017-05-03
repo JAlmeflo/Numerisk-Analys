@@ -49,7 +49,7 @@ function f = CubicSpline(x, y)
   % Calculate spline S
   S = zeros(1,sz);
   for i = 2:sz % Start from 2 because we need x(i-1)
-    hi = x(i) - x(i - 1);
+    hi = x(i) - x(i - 1); % Todo: change (already calculated)
     
     
     % kn_1 + 2kn = rn
