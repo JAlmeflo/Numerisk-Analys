@@ -1,0 +1,4 @@
+function f = CubicSpline()
+  
+  
+end

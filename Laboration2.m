@@ -44,4 +44,4 @@ for i =1:100
   st(i) = baglangd(i,r);
 end
 
-plot(r, st);
+plot(r, st); % Will plot task 12
