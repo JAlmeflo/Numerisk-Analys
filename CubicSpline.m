@@ -27,7 +27,7 @@ function f = CubicSpline(x, y)
   
   % A
   A(1,1) = 2;
-  A(1,2) = 1:
+  A(1,2) = 1;
   A(sz,sz) = 2;
   A(sz,sz-1) = 1;
   for i = 2:(sz - 1)    
