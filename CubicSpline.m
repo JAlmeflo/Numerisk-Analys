@@ -49,7 +49,7 @@ function f = CubicSpline(x, y)
   
   % Calculate spline S
   %S = zeros(1,sz);
-  S{1} = @(x) 0;
+  S{1} = @(xx) 0;
   for i = 2:sz % Start from 2 because we need x(i-1)
     % kn_1 + 2kn = rn
     % rn = 3*((yn - yn_1) / hn);
@@ -62,7 +62,7 @@ function f = CubicSpline(x, y)
     di = 2*(y(i - 1) - y(i)) + h(i)*(k(i-1) + k(i));
     
     % ui = (x - x(i - 1)) / hi;    
-    S{i} = @(x) ai + bi*((x - x(i - 1)) / h(i)) + ci*((x - x(i - 1)) / h(i)).^2 + di*((x - x(i - 1)) / h(i)).^3;
+    S{i} = @(xx) ai + bi*((xx - x(i - 1)) / h(i)) + ci*((xx - x(i - 1)) / h(i)).^2 + di*((xx - x(i - 1)) / h(i)).^3;
   end
   f = S;
 end

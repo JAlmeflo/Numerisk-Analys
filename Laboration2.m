@@ -45,3 +45,13 @@ for i =1:100
 end
 
 plot(r, st); % Will plot task 12
+
+
+% 13
+Q = CubicSpline(st, r);
+for i = 2:100
+  fplot(Q{i}, [st(i-1) st(i)]);
+  hold on;
+end
+hold off;
+legend("hide");
