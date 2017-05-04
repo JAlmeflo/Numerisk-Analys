@@ -55,3 +55,17 @@ for i = 2:100
 end
 hold off;
 legend("hide");
+
+%14
+sigmaX = linspace(0, 0, 100);
+sigmaY = linspace(0, 0, 100);
+sigmaZ = linspace(0, 0, 100);
+sigmaTot = linspace(st(1), st(100), 100);
+for i = 1:100
+  tmp = vt(Q{i}(sigmaTot(i)));
+  sigmaX(i) = tmp(1);
+  sigmaY(i) = tmp(2);
+  sigmaZ(i) = tmp(3);
+end
+
+plot3(sigmaX, sigmaY, sigmaZ);
