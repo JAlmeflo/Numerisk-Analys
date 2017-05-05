@@ -1,5 +1,5 @@
 function f = CubicSpline(x, y)
-  sz = size(x)(2);
+  sz = size(x, 2);
   
   % Si(x) = ai + bi*ui + ci*ui^2 + di*ui^3;
   

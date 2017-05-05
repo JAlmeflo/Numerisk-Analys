@@ -17,12 +17,12 @@ a7 = p1 + p2 + p3 + p4;
 % v(t) = (4*t*cos(t) + a1, 2*t*sin(2*t - a2), a3 - t.^2);
 % f(x, y) = (a4*x.^2 + a5*y.^2 + x*y + 10*a6) / (10*a7);
 
-vt = @(t) [4*t*cos(t) + a1, 2*t*sin(2*t - a2), a3 - t.^2];
+vt = @(t) [4*t.*cos(t) + a1, 2*t.*sin(2*t - a2), a3 - t.^2];
 fxy = @(x, y) (a4*x.^2 + a5*y.^2 + x*y - 10*a6) / (10*a7);
 
 %r = -2*pi:0.01:2*pi; % Old range value
 r = linspace(-2.8383, 2.8444, 100); % New range value (med 100 punkter)
-plot3(4.*r.*cos(r) + a1, 2.*r.*sin(2.*r - a2), a3 - r.^2, '*');
+%plot3(4.*r.*cos(r) + a1, 2.*r.*sin(2.*r - a2), a3 - r.^2, '*');
 hold on; % Also write the mesh to the same graph
 
 %y = [(a4.*x.^2 + a5.*y.^2 + x.*y + 10.*a6) / (10.*a7)]
@@ -30,7 +30,7 @@ hold on; % Also write the mesh to the same graph
 
 [rx, ry] = meshgrid(-15:0.1:15, -15:0.1:15);
 rz = (a4*rx.^2 + a5*ry.^2 + rx.*ry - 10*a6) / (10*a7);
-surf(rx, ry, rz);
+%surf(rx, ry, rz);
 hold off;
 
 %skar = @(t) (2*t*sin(2*t - 1.5))*((2*t*sin(2*t - 1.5)) + (4*t*cos(t)+1.5)) + 105*t.^2 - 920;
@@ -50,22 +50,18 @@ plot(r, st); % Will plot task 12
 % 13
 Q = CubicSpline(st, r);
 for i = 2:100
-  fplot(Q{i}, [st(i-1) st(i)]);
+  %fplot(Q{i}, [st(i-1) st(i)]);
   hold on;
 end
 hold off;
-legend("hide");
+%legend("hide");
 
 %14
-sigmaX = linspace(0, 0, 100);
-sigmaY = linspace(0, 0, 100);
-sigmaZ = linspace(0, 0, 100);
 sigmaTot = linspace(st(1), st(100), 100);
 for i = 1:100
   tmp = vt(Q{i}(sigmaTot(i)));
-  sigmaX(i) = tmp(1);
-  sigmaY(i) = tmp(2);
-  sigmaZ(i) = tmp(3);
 end
-
-plot3(sigmaX, sigmaY, sigmaZ);
+sigmaTot = sigmaTot';
+S = spline(st, r);
+W = vt(ppval(S,sigmaTot));
+scatter3(W(:,1),W(:,2),W(:,3));
