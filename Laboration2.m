@@ -65,3 +65,10 @@ sigmaTot = sigmaTot';
 S = spline(st, r);
 W = vt(ppval(S,sigmaTot));
 scatter3(W(:,1),W(:,2),W(:,3));
+
+
+%15
+aby = vt(2.8444);
+h = 10.^(-5)
+fpx = (fxy(aby(1) + h, aby(2)) - fxy(aby(1) - h, aby(2))) / (2*h);
+fpy = (fxy(aby(1), aby(2) + h) - fxy(aby(1), aby(2) - h)) / (2*h);
