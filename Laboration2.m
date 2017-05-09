@@ -40,7 +40,7 @@ f = HalveringMetod(0.001);
 disp(f);
 
 st = zeros(1,100);
-for i =1:100
+for i = 2:100
   st(i) = baglangd(i,r);
 end
 
