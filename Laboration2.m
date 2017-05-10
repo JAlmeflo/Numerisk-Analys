@@ -112,5 +112,5 @@ A = [ 1 0 0
       0 1 0
       0 0 -1];
 % d
-vbp = v_prim(2.8444, 10.^-5);
-Svar = vbp * A;
+vpb = v_prim(2.8444, 10.^-5);
+Svar = vpb * A;
