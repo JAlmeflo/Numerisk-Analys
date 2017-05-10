@@ -33,7 +33,6 @@ rz = (a4*rx.^2 + a5*ry.^2 + rx.*ry - 10*a6) / (10*a7);
 %surf(rx, ry, rz);
 hold off;
 
-%skar = @(t) (2*t*sin(2*t - 1.5))*((2*t*sin(2*t - 1.5)) + (4*t*cos(t)+1.5)) + 105*t.^2 - 920;
 skar = @(t) (2*t*sin(2*t - 1.5)).^2 + (4*t*cos(t)+1.5)*(2*t*sin(2*t - 1.5)) + 105*t.^2 - 920;
 
 f = HalveringMetod(0.001);
@@ -54,7 +53,7 @@ for i = 2:100
   hold on;
 end
 hold off;
-%legend("hide");
+%legend("hide"); % Octave specific
 
 %14
 sigmaTot = linspace(st(1), st(100), 100);
